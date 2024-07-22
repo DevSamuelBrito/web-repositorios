@@ -68,13 +68,11 @@ export default function Main() {
     [newRepo, repositorios]
   ); //vai chamar a função apenas qunado o newRepo e o repositorios mudarem
 
-  const handleDelete = useCallback(
-    (repo) => {
-      const find = repositorios.filter((r) => r.name !== repo);
-      setRepositorios(find);
-    },
-    [repositorios]
-  );
+  const handleDelete = useCallback((repo)=>{ //função que vai deletar o repositorio desejado na lista
+    const find = repositorios.filter(r => r.name !== repo); 
+    setRepositorios(find); // ele vai pegar o id do repositorio que no caso vai ser o nome e vai filtrar toda a lista e vai retornar 
+    //a mesma porém sem o repositorio que você deseja deletar
+  },[repositorios]);
 
   return (
     <div>
