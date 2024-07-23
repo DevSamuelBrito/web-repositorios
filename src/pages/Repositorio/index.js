@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import api from "../../services/api";
 import { FaArrowLeft } from "react-icons/fa";
-import { Container, Owner, Loading, BackButton } from "./style";
+import { Container, Owner, Loading, BackButton, IssuesList } from "./style";
 
 export default function Repositorio({ match }) {
   const [repositorio, setRepositorio] = useState({});
@@ -15,7 +15,7 @@ export default function Repositorio({ match }) {
         api.get(`/repos/${nomeRepo}/issues`, {
           params: {
             state: "open",
-            page: 5,
+            per_page: 5,
           },
         }),
       ]);
@@ -45,6 +45,23 @@ export default function Repositorio({ match }) {
         <h1>{repositorio.name}</h1>
         <h1>{repositorio.description}</h1>
       </Owner>
+
+      <IssuesList>
+        {issues.map((issue) => (
+          <li key={String(issue.id)}>
+            <img src={issue.user.avatar_url} alt={issue.user.login} />
+            <div>
+              <strong>
+                <a href={issue.html_url}>{issue.title}</a>
+                {issue.labels.map((label) => (
+                  <span key={String(label.id)}>{label.name}</span>
+                ))}
+              </strong>
+              <p>{issue.user.login}</p>
+            </div>
+          </li>
+        ))}
+      </IssuesList>
     </Container>
   );
 }
