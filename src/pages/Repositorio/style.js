@@ -119,3 +119,20 @@ export const PageActions = styled.div`
         }
     } 
 `;
+
+export const FilterList = styled.div `
+    margin: 15px 0;
+    button{
+        outline: 0;
+        border: 0;
+        background: #0d2636;
+        color: #fff;
+        padding: 8px;
+        margin: 0 3px;
+        border-radius: 4px;
+
+        &:nth-child(${(props) => props.active + 1}){
+            background: #0071db;
+        }
+    }
+`; 
