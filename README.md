@@ -29,7 +29,7 @@ Search Screen
 ![Descrição da Imagem](public/images/print1.png)
 
 Repository Screen
-![Descrição da Imagem](public/images/print2.png)
+![Descrição da Imagem](public/images/print2.PNG)
 
 ## Scripts
 
