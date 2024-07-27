@@ -6,7 +6,7 @@ Tela de Pesquisa
 ![Descrição da Imagem](public/images/print1.png)
 
 Tela do Repositório
-![Descrição da Imagem](public/images/print2.png)
+![Descrição da Imagem](public/images/print2.PNG)
 
 ## Scripts
 
